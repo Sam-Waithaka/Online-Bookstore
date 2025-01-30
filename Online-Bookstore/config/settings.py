@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', 
 
     # Third Party Apps
     'crispy_forms',
     'crispy_bootstrap5',
+    'allauth',
+    'allauth.account',
 
     # Local Apps
     'accounts.apps.AccountsConfig',
@@ -55,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware', 
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -114,6 +118,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL  ='accounts.CustomUser'
 
+# django-allauth config
+SITE_ID = 1
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+# ACCOUNT_SESSION_REMEMBER = True
+# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # Only one password field
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -145,6 +165,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
 
