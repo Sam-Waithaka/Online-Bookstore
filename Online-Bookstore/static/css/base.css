@@ -1,0 +1,13 @@
+h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.bookcover {
+    width: auto;
+    height: 150px;
+    margin: 0 10px 0 0;
+    float: left;
+}
