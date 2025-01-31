@@ -12,6 +12,7 @@ services:
       - DEBUG=1
       - DJANGO_ALLOWED_HOSTS=*
       - DJANGO_SECRET_KEY='django-insecure-mfal^@4r3=vbj(pfgrpftvq59el5j4m+p*aas(c=dqiy1z*%sk'
+      - DJANGO_DEBUG=True
     depends_on:
       - db
   db:
