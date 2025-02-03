@@ -22,5 +22,6 @@ urlpatterns = [
     # path('accounts/', include('django.contrib.auth.urls')), #User Management
     path('accounts/', include('allauth.urls')), # Local implementation
     path('admin/', admin.site.urls),
+    path('books/', include('books.urls')),
     
 ]
