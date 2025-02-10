@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.db.models import Q
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render
 
@@ -24,6 +25,5 @@ class SearchResultsListView(ListView):
     template_name = 'books/search_results.html'
     context_object_name = 'book_list'
 
-    # def get_queryset(self):
-    #     query = self.request.GET.get('q')
-    #     return Book.objects.filter(title__icontains=query)
+    def get_queryset(self):
+        return Book.objects.filter(Q(title__icontains='django') | Q(author__icontains='Meadows'))
