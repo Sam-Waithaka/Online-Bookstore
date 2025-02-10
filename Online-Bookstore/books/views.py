@@ -26,4 +26,5 @@ class SearchResultsListView(ListView):
     context_object_name = 'book_list'
 
     def get_queryset(self):
-        return Book.objects.filter(Q(title__icontains='django') | Q(author__icontains='Meadows'))
+        query = self.request.GET.get('q')
+        return Book.objects.filter(Q(title__icontains=query) | Q(author__icontains=query))
