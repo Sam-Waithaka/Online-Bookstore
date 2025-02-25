@@ -102,6 +102,12 @@ To run the tests for the application, use the following command:
 docker-compose exec web python manage.py test
 ```
 
+### Running the project in production mode
+To run the project in production mode, execute:
+```bash
+docker-compose -f docker-compose-prod.yml up -d
+```
+
 ## Project Configuration
 
 ### Docker Configuration

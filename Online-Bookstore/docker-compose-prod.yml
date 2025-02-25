@@ -11,14 +11,7 @@ services:
     environment:  # Corrected here
       - DEBUG=1
       - DJANGO_ALLOWED_HOSTS=*
-      - DJANGO_SECRET_KEY='django-insecure-mfal^@4r3=vbj(pfgrpftvq59el5j4m+p*aas(c=dqiy1z*%sk'
-      - DJANGO_DEBUG=True
-      - DJANGO_SECURE_SSL_REDIRECT=False
-      - DJNAGO_SECURE_HSTS_SECONDS=0
-      - DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS=False
-      - DJANGO_SECURE_HSTS_PRELOAD=False
-      - DJANGO_SESSION_COOKIE_SECURE=False
-      - DJANGO_CSRF_COOKIE_SECURE=False
+      - DJANGO_SECRET_KEY='R1hdOWIbjCDFeE7_Ws2tXgy_ikrjukliL80TBukXF7M2-0JBxRM'
     depends_on:
       - db
   db:
