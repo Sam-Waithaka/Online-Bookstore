@@ -8,7 +8,8 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
-    environment:  # Corrected here
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
+    environment: 
       - DEBUG=1
       - DJANGO_ALLOWED_HOSTS=*
       - DJANGO_SECRET_KEY='django-insecure-mfal^@4r3=vbj(pfgrpftvq59el5j4m+p*aas(c=dqiy1z*%sk'
